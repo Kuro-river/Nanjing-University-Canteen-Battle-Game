@@ -1,57 +1,60 @@
-# Raylib RPG Example
+🛡️ 南大食堂保卫战 (NJU Canteen Defense)
+基于 raylib-extras 的 RPG 示例项目
+民以食为天，在南大更是如此！
+由于不明原因，各种怪异生物占领了南京大学的各大食堂（鼓楼、仙林、浦口校区全面告急！）。作为一名南大学子，你需要拿起手中的“武器”（或许是一个不锈钢餐盘？），击败游走的怪物，守卫我们最后的晚餐。
 
-An example RPG Game.
+🎮 游戏核心玩法
+角色选择： 自由选择不同系别或身份的学生角色，每种角色拥有独特的初始属性。
 
-Demo Gamplay
-https://youtu.be/9apXiHKIlsg
+道具搜集： 在食堂的角落寻找隐藏道具（也许是学长留下的秘籍，或者是加了蛋的煎饼果子）。
 
-## Design Document
-https://docs.google.com/document/d/1lxpR6WbbjmCi9X_seGPYPYz7UhFcAKkX5Xl3pVfEwHs/edit?usp=sharing
+即时战斗： 击退那些企图抢夺鸡腿的怪物，保护食堂秩序。
 
-## Video Overview
-https://youtu.be/krykjMt9ZKQ
+终极奖励： 战胜食堂尽头的“黑暗料理界大厨”，获得传说中的“南大专属餐券”。
 
-# Building
-The RPG Example uses premake just like all other items in raylib extras. A tutorial on how to build a raylib project with premake can be found here. https://github.com/raylib-extras/game-premake
+✨ 核心功能 (Features)
+本项目展示了如何使用 raylib 实现一个功能完备的 RPG 系统：
 
-### Windows MinGW
-Run the premake-mingw.bat and then run make in the folder
+系统架构： 完整的游戏状态机管理（菜单、暂停、运行、死亡结算）。
 
-### Windows Visual Studio (not VSC)
-Run premake-VisualStudio.bat and then open the RPGExample.sln that is generated
+地图探索： 支持 Tiled 导出的 Tile Map，包含对象层触发交互。
 
-### Linux
-CD into the directory, run ./premake5 gmake2 and then run make
+交互逻辑： 经典的 Click-to-Move（鼠标点击移动）机制。
 
-### MacOS
-CD into the directory, run ./premake5.osx gmake2 and then run make
+视觉效果： 2D 追踪摄像机、简单的粒子与攻击特效。
 
+音频系统： 沉浸式的背景音乐与战斗音效。
 
-# State
-The current example is feature complete and would be considered in 'beta' state. It has all the main features that are required by the game.
+资源加载： 高效的纹理、音效及地图资源自动加载方案。
 
-# Features
-This sample has examples of how to do the following things in raylib
+🛠️ 构建指南 (Building)
+本项目使用 premake 进行项目管理（与 raylib-extras 标准一致）。详细教程可参考 game-premake。
 
-- Game State
-- Menus
-- Quiting the game from menus
-- Pause/Resume Game
-- Tile Map with object layers
-- Click to Move
-- 2D Camera that keeps the player in view
-- Simple Effects
-- Basic AI
-- Background Music
-- Sound Effects
-- Resource Loading
+🪟 Windows (MinGW)
+运行 premake-mingw.bat，然后在当前文件夹执行 make。
 
-# C++
-This example does use C++. The use of C++ has been keept at a resonable level. C++ is used for
+🪟 Windows (Visual Studio)
+运行 premake-VisualStudio.bat，双击生成的 RPGExample.sln 即可。
 
-- Containers (vector, list, map, etc...)
-- Simple classes
-- Menu Screens
+🐧 Linux
+Bash
+./premake5 gmake2
+make
+🍎 MacOS
+Bash
+./premake5.osx gmake2
+make
+💻 关于 C++ 的使用说明
+别怕，C++ 只是我们保卫食堂的工具。 本项目虽然使用了 C++，但保持了非常克制的开发风格，旨在展示如何利用 C++ 特性简化 RPG 开发：
 
-Every use of C++ in this project can be replicated in C, or any other language. The main reason for using C++ was to not clutter up the project with implementations of common containers such as linked lists.
-Do not fear the C++. C++ is just another tool to use to solve problems.
+容器化： 使用 std::vector, std::list, std::map 管理物品栏和怪物。
+
+对象化： 简单的类结构用于处理菜单界面和玩家属性。
+
+低耦合： 所有逻辑均可以轻松移植到 C 语言或其他编程语言。
+
+我们选择 C++ 的核心目的是避免编写重复的底层链表逻辑，从而让你更专注于“如何让战斗更有趣”。
+
+📝 开发状态
+当前版本：Beta (功能完备)
+游戏机制已全部实现，目前处于平衡性调整和资源优化阶段。
